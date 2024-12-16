@@ -1,0 +1,27 @@
+@mixin list($direction, $spacing){
+    display: flex;
+    flex-direction: $direction;
+    gap: $spacing;
+}
+
+.check-list {
+    @include list(column, 8px);
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    
+    > li {
+        @include list(row, 20px);
+        align-items: center;
+        height: 28px;
+    }
+
+    > li::before {
+        content: '';
+        background-image: url(../../assets/icon-list.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+    }
+}

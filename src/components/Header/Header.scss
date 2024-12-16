@@ -1,0 +1,23 @@
+@mixin header($fontSize, $fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    margin: 0;
+}
+
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 356px;
+
+    > .title {
+        @include header(56px, 700);
+    }
+
+    > .content {
+        @include header(16px, 400);
+        line-height: 24px;
+    }
+}

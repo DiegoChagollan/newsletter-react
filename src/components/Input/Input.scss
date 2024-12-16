@@ -1,0 +1,48 @@
+@mixin flex($direction, $spacing) {
+    display: flex;
+    flex-direction: $direction;
+    gap: $spacing;
+}
+
+@mixin proportions($heigth, $width) {
+    height: $heigth;
+    width: $width;
+}
+
+.form {
+    @include flex(column, 8px);
+
+    > .labels {
+        @include flex(row, 180px);
+        font-weight: 700;
+        font-style: normal;
+        font-size: 12px;
+
+        > label:last-child {
+            display: none;
+            color: red;
+        }
+    }
+
+    > .labels.label-invalid > label:last-child {
+        display: block;
+    }
+
+    > .input {
+        @include proportions(56px, 86%);
+        border-radius: 8px;
+        padding: 0 24px;
+        border-width: 0.5px;
+        color: #3c3b3b;
+        outline: none;
+    }
+
+    > .input.input-invalid {
+        background-color: #fee9e5;
+        border: solid #d28582;
+    }
+
+    > .input.input-invalid::placeholder {
+        color: #fc8579;
+    }
+}

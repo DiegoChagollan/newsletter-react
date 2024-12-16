@@ -1,0 +1,22 @@
+@mixin button {
+    background-color: #232742;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    height: 60px;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+}
+
+@mixin button-hover($bg-first-color, $bg-second-color) {
+    &:hover {
+        background-image: linear-gradient(to right, $bg-first-color, $bg-second-color);
+    }
+}
+
+.button {
+    @include button;
+    @include button-hover(#ff527b, #ff6a3b);
+}
