@@ -1,0 +1,14 @@
+.text-icon{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.text-icon::before{
+    content: '';
+    background-image: url(../../assets/icon-list.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}

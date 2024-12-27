@@ -1,10 +1,10 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import BackgroundView from './BackgroundView';
+import SubscriptionPrompt from './views/subscriptionPrompt/SubscriptionPrompt';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BackgroundView />
+        <SubscriptionPrompt />
     </React.StrictMode>
 );

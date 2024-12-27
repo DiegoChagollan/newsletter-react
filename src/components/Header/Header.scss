@@ -1,6 +1,7 @@
-@mixin header($fontSize, $fontWeight) {
+@mixin font-styles($fontSize, $fontWeight) {
     font-size: $fontSize;
     font-weight: $fontWeight;
+    color: hsl(234, 29%, 20%);
     margin: 0;
 }
 
@@ -13,11 +14,11 @@
     width: 356px;
 
     > .title {
-        @include header(56px, 700);
+        @include font-styles(56px, 700);
     }
 
-    > .content {
-        @include header(16px, 400);
+    > .description {
+        @include font-styles(16px, 400);
         line-height: 24px;
     }
 }

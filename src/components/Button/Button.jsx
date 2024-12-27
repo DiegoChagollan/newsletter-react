@@ -1,12 +1,7 @@
 import React from 'react';
 import './Button.scss';
 
-const Button = ({text, variant}) => {
-
-  const handleClick = () => {
-    alert('Button clicked!');
-  };
-
+const Button = ({text}) => {
   return (
     <button type = 'button' className = 'button'>
       {text}

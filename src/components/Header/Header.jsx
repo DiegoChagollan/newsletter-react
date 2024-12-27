@@ -1,11 +1,11 @@
 import React from 'react';
 import './Header.scss';
 
-const Header = ({title, content}) => {
+const Header = ({title, description}) => {
   return (
     <div className = 'header'>
       <h1 className = 'title'> {title} </h1>
-      <p className = 'content'> {content} </p>
+      <p className = 'description'> {description} </p>
     </div>
   );
 };

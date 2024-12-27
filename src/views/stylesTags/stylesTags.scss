@@ -1,0 +1,47 @@
+@mixin base-styles($spacing-between-elements, $padding:0){
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-between-elements;
+    padding: $padding;
+}
+
+@mixin figure($height-size, $width-size){
+    height: $height-size;
+    width: $width-size;
+}
+
+.middleContent{
+    @include base-styles(24px, 0 8px);
+}
+
+.shippingContent{
+    @include base-styles(20px);
+}
+
+.cardContent{
+    @include base-styles(36px, 80px 40px);
+}
+
+.cardImage{
+    @include figure(auto, 25%);
+
+    > img {
+        @include figure(100%, 175%);
+        border-radius: 16px;
+        object-fit: cover;
+    }
+}
+
+.mainContent{
+    @include figure(100%, 100%);
+    background-color: hsl(235, 18%, 26%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item-with-icon{
+    @include base-styles(16px);
+    list-style: none;
+    margin: 0;
+}
