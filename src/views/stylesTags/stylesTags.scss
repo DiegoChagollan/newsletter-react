@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 @mixin base-styles($spacing-between-elements, $padding:0){
     display: flex;
     flex-direction: column;
@@ -12,24 +17,43 @@
 
 .middleContent{
     @include base-styles(24px, 0 8px);
+    width: 100%;
+}
+
+.middle{
+    @include base-styles(20px)
 }
 
 .shippingContent{
-    @include base-styles(20px);
+    @include base-styles(24px);
 }
 
-.cardContent{
+.cardContent-subscription{
     @include base-styles(36px, 80px 40px);
+    width: 45%;
 }
 
-.cardImage{
-    @include figure(auto, 25%);
+.cardContent-success{
+    @include base-styles(32px, 24px 32px);
+    align-content: center;
+}
 
-    > img {
+.coverImage{
+    @include figure(100%, 26%);
+
+    > img{
         @include figure(100%, 175%);
         border-radius: 16px;
         object-fit: cover;
     }
+}
+
+.successList{
+        > img{
+            width: 16%;
+            height: 96%;
+            object-fit: contain;
+        }
 }
 
 .mainContent{
@@ -43,5 +67,4 @@
 .list-item-with-icon{
     @include base-styles(16px);
     list-style: none;
-    margin: 0;
 }
