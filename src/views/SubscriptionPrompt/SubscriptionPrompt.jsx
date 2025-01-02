@@ -25,12 +25,12 @@ const SubscriptionPrompt = () => {
             <div className='shippingContent'>
               <Input />
 
-              <Button text='Subscribe to monthly newsletter' fontSize='16px' height='60px' />
+              <Button text='Subscribe to monthly newsletter' fontSize='16px' height='60px ' />
             </div>
           </div>
-          <figure className='coverImage' alt='alternativeText'>
+          <div className='coverImage' alt='alternativeText'>
             <img src={coverImage}/>
-          </figure>
+          </div>
         </Card>
       </main>
   );

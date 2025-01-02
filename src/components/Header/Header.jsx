@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Header.scss';
 
 const Header=({
@@ -8,8 +8,22 @@ const Header=({
   descriptionFontSize,
   descriptionLineHeight
 }) => {
+  const [isMobile,setIsMobile]= useState(window.innerWidth<837);
+
+  useEffect(() =>{
+    const handleResize = () =>{
+      setIsMobile(window.innerWidth<837);
+    };
+    
+    window.addEventListener('resize',handleResize);
+
+    return () =>{
+      window.removeEventListener('resize',handleResize);
+    };
+  },[]);
+
   const titleStyles={
-    fontSize: titleFontSize
+    fontSize: isMobile ? '40px' : titleFontSize
   };
 
   const descriptionStyles={

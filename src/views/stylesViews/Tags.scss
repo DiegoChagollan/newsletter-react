@@ -10,14 +10,13 @@
     padding: $padding;
 }
 
-@mixin figure($height-size, $width-size){
+@mixin sizes($height-size, $width-size){
     height: $height-size;
     width: $width-size;
 }
 
 .middleContent{
-    @include base-styles(24px, 0 8px);
-    width: 100%;
+    @include base-styles(24px);
 }
 
 .middle{
@@ -31,33 +30,42 @@
 .cardContent-subscription{
     @include base-styles(36px, 80px 40px);
     width: 45%;
+
+    @media screen and (max-width: 837px) {
+        padding: 40px 15px;
+        width: 92%;   
+    }
 }
 
 .cardContent-success{
     @include base-styles(32px, 24px 32px);
-    align-content: center;
+    @media screen and (max-width: 837px) {
+        gap: 240px;
+    }
 }
 
 .coverImage{
-    @include figure(100%, 26%);
-
+    @include sizes(100%, 50%);
+    @media screen and (max-width: 837px) {
+        width: 100%;
+    }
     > img{
-        @include figure(100%, 175%);
+        @include sizes(100%, 100%);
         border-radius: 16px;
         object-fit: cover;
     }
 }
 
 .successList{
-        > img{
-            width: 16%;
-            height: 96%;
-            object-fit: contain;
-        }
+    > img{
+        width: 16%;
+        height: 96%;
+        object-fit: contain;
+    }
 }
 
 .mainContent{
-    @include figure(100%, 100%);
+    @include sizes(100%, 100%);
     background-color: hsl(235, 18%, 26%);
     display: flex;
     align-items: center;
@@ -66,5 +74,6 @@
 
 .list-item-with-icon{
     @include base-styles(16px);
+    line-height: 24px;
     list-style: none;
 }
