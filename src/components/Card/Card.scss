@@ -1,5 +1,8 @@
 .card {
     background-color: hsl(0, 0%, 100%);
-    border-radius: 32px;
-    padding: 16px;
+    gap: 40px;
+    padding: 24px;
+    @media screen and (max-width: 898px) {
+        padding: 0;
+    }
 }

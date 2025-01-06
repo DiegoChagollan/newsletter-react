@@ -4,7 +4,8 @@ import './Button.scss';
 const Button = ({
   text,
   fontSize,
-  height
+  height,
+  onClick
 }) => {
   const variedStyles={
     fontSize: fontSize,
@@ -12,7 +13,7 @@ const Button = ({
   };
 
   return (
-    <button type = 'button' className = 'button' style={variedStyles}>
+    <button type = 'button' className = 'button' style={variedStyles} onClick={onClick}>
       {text}
     </button>
   );

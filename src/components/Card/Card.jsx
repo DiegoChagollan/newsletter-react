@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Card.scss';
 
-const Card=({width,height,direction='column',children}) => {
-  // const cardWindow = window.innerWidth<768;
-  const [isMobile,setIsMobile]= useState(window.innerWidth<837);
+const Card=({width,height,direction,border='column',children}) => {
+  const [isMobile,setIsMobile]= useState(window.innerWidth<898);
 
   useEffect(() =>{
     const handleResize = () =>{
-      setIsMobile(window.innerWidth<837);
+      setIsMobile(window.innerWidth<898);
     };
     
     window.addEventListener('resize',handleResize);
@@ -19,9 +18,10 @@ const Card=({width,height,direction='column',children}) => {
 
   const sizes={
     width: isMobile ? '100%' : width || '100%',
-    height: isMobile ? '100%' : height || '100%',
+    height: isMobile ? 'auto' : height || '100%',
     display: 'flex',
-    flexDirection: isMobile ? 'column-reverse' : direction
+    flexDirection: isMobile ? 'column-reverse' : direction,
+    borderRadius: isMobile ? 'opx' : border || '32px'
   };
 
   return (
